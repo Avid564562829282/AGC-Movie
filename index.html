@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags Dasar -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGC Movie - Discover Films</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta name="description" content="AGC Movie - Temukan dan tonton film terbaru, film populer, film terbaik, dan film yang akan datang. Platform streaming film gratis dengan koleksi lengkap.">
+    <meta name="keywords" content="film, movie, streaming film, nonton film, film terbaru, film populer, film terbaik, film gratis, AGC Movie">
+    <meta name="author" content="AGC Movie">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agcmovie.com/">
+    <meta property="og:title" content="AGC Movie - Platform Streaming Film Gratis Terlengkap">
+    <meta property="og:description" content="Temukan dan tonton film terbaru, film populer, film terbaik, dan film yang akan datang di AGC Movie.">
+    <meta property="og:image" content="https://agcmovie.com/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://agcmovie.com/">
+    <meta property="twitter:title" content="AGC Movie - Platform Streaming Film Gratis Terlengkap">
+    <meta property="twitter:description" content="Temukan dan tonton film terbaru, film populer, film terbaik, dan film yang akan datang di AGC Movie.">
+    <meta property="twitter:image" content="https://agcmovie.com/assets/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://agcmovie.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    
+    <!-- Title -->
+    <title>AGC Movie - Platform Streaming Film Gratis Terlengkap</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AGC Movie",
+      "url": "https://agcmovie.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://agcmovie.com/search.html?query={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">AGC Movie</a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="now-playing.html">Now Playing</a></li>
+            <li><a href="popular.html">Popular</a></li>
+            <li><a href="upcoming.html">Upcoming</a></li>
+            <li><a href="top-rated.html">Top Rated</a></li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <form action="search.html" method="get">
+            <input type="text" name="query" placeholder="Search movies...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <!-- Ganti section hero dengan ini -->
+      <section class="hero-slider">
+        <div class="slider-container" id="trending-slider">
+          <!-- Slides will be loaded here via JavaScript -->
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots" id="slider-dots">
+          <!-- Dots will be added here via JavaScript -->
+        </div>
+      </section>
+      <section class="movie-section">
+        <div class="section-header">
+          <h2>Now Playing</h2>
+          <a href="now-playing.html" class="see-all">See All</a>
+        </div>
+        <div class="movie-grid" id="now-playing">
+          <!-- Movies will be loaded here via JavaScript -->
+        </div>
+      </section>
+      <section class="movie-section">
+        <div class="section-header">
+          <h2>Popular Movies</h2>
+          <a href="popular.html" class="see-all">See All</a>
+        </div>
+        <div class="movie-grid" id="popular">
+          <!-- Movies will be loaded here via JavaScript -->
+        </div>
+      </section>
+      <section class="movie-section">
+        <div class="section-header">
+          <h2>Upcoming Movies</h2>
+          <a href="upcoming.html" class="see-all">See All</a>
+        </div>
+        <div class="movie-grid" id="upcoming">
+          <!-- Movies will be loaded here via JavaScript -->
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>AGC Movie</h3>
+            <p>Your ultimate destination for movie information, reviews, and discovery.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="now-playing.html">Now Playing</a></li>
+              <li><a href="popular.html">Popular</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+              <li><a href="top-rated.html">Top Rated</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 AGC Movie. All rights reserved. Powered by TMDB API.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/slider.js"></script>
+    <script>updateMetaTags(movie);</script>
+  </body>
+</html>

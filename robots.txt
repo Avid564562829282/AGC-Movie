@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /search.html
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://agcmovie.com/sitemap.xml

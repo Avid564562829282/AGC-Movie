@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGC Movie - Now Playing</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">AGC Movie</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="now-playing.html">Now Playing</a></li>
+                    <li><a href="popular.html">Popular</a></li>
+                    <li><a href="upcoming.html">Upcoming</a></li>
+                    <li><a href="top-rated.html">Top Rated</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <form action="search.html" method="get">
+                    <input type="text" name="query" placeholder="Search movies...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="movie-section search-results">
+            <div class="container">
+                <div class="search-header">
+                    <h1>Upcoming <span>Movies</span></h1>
+                </div>
+                <div class="movie-grid" id="movies-container">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>AGC Movie</h3>
+              <p>Your ultimate destination for movie information, reviews, and discovery.</p>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="now-playing.html">Now Playing</a></li>
+                <li><a href="popular.html">Popular</a></li>
+                <li><a href="upcoming.html">Upcoming</a></li>
+                <li><a href="top-rated.html">Top Rated</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Connect</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2023 AGC Movie. All rights reserved. Powered by TMDB API.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="../js/now-playing.js"></script>
+</body>
+</html>

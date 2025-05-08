@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGC Movie - Watch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <style>
+        /* Additional styles for watch page */
+        .watch-container {
+            padding: 80px 0 30px;
+        }
+        
+        .player-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .player-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .watch-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .watch-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .back-button:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .quality-selector {
+            margin: 20px 0;
+        }
+        
+        .quality-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .quality-btn {
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .quality-btn.active {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .quality-btn:hover:not(.active) {
+            background-color: var(--hover-color);
+        }
+        
+        .server-selector {
+            margin: 20px 0;
+        }
+        
+        .server-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .server-btn {
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .server-btn.active {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        
+        .server-btn:hover:not(.active) {
+            background-color: var(--hover-color);
+        }
+        
+        @media (max-width: 768px) {
+            .watch-title {
+                font-size: 1.5rem;
+            }
+            
+            .quality-buttons, .server-buttons {
+                gap: 8px;
+            }
+            
+            .quality-btn, .server-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">AGC Movie</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="now-playing.html">Now Playing</a></li>
+                    <li><a href="popular.html">Popular</a></li>
+                    <li><a href="upcoming.html">Upcoming</a></li>
+                    <li><a href="top-rated.html">Top Rated</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <form action="search.html" method="get">
+                    <input type="text" name="query" placeholder="Search movies...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="watch-container">
+            <div class="container">
+                <div class="watch-meta">
+                    <h1 class="watch-title" id="movie-title">Loading Movie...</h1>
+                    <a href="javascript:history.back()" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                
+                <div class="player-container">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    <iframe id="movie-iframe" allowfullscreen></iframe>
+                </div>
+                
+                <div class="quality-selector">
+                    <h3>Select Quality:</h3>
+                    <div class="quality-buttons" id="quality-buttons">
+                        <button class="quality-btn active" data-quality="auto">Auto</button>
+                        <button class="quality-btn" data-quality="1080">1080p</button>
+                        <button class="quality-btn" data-quality="720">720p</button>
+                        <button class="quality-btn" data-quality="480">480p</button>
+                    </div>
+                </div>
+                
+                <div class="server-selector">
+                    <h3>Select Server:</h3>
+                    <div class="server-buttons" id="server-buttons">
+                        <button class="server-btn active" data-server="vidsrc">VidSrc</button>
+                        <button class="server-btn" data-server="vidsrcpro">VidSrc Pro</button>
+                        <button class="server-btn" data-server="database">Database</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>AGC Movie</h3>
+              <p>Your ultimate destination for movie information, reviews, and discovery.</p>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="now-playing.html">Now Playing</a></li>
+                <li><a href="popular.html">Popular</a></li>
+                <li><a href="upcoming.html">Upcoming</a></li>
+                <li><a href="top-rated.html">Top Rated</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Connect</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2023 AGC Movie. All rights reserved. Powered by TMDB API.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="js/movie-watch.js"></script>
+</body>
+</html>
