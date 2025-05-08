@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://https://agcmovie.vercel.app/</loc>
+        <loc>https://agcmovie.vercel.app/</loc>
         <lastmod>2023-10-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://https://agcmovie.vercel.app/now-playing.html</loc>
+        <loc>https://agcmovie.vercel.app/now-playing.html</loc>
         <lastmod>2023-10-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://https://agcmovie.vercel.app/popular.html</loc>
+        <loc>https://agcmovie.vercel.app/popular.html</loc>
         <lastmod>2023-10-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://https://agcmovie.vercel.app/upcoming.html</loc>
+        <loc>https://agcmovie.vercel.app/upcoming.html</loc>
         <lastmod>2023-10-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://https://agcmovie.vercel.app/top-rated.html</loc>
+        <loc>https://agcmovie.vercel.app/top-rated.html</loc>
         <lastmod>2023-10-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
