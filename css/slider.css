@@ -1,0 +1,218 @@
+/* Hero Slider Styles */
+.hero-slider {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.slider-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(13, 37, 63, 0.9), rgba(13, 37, 63, 0.7));
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.3s;
+}
+
+.slide.active .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.slide p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.slider-controls button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-dot.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+/* Responsive Styles for Slider */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 60vh;
+    }
+    
+    .slide h2 {
+        font-size: 2rem;
+    }
+    
+    .slide p {
+        font-size: 1rem;
+    }
+    
+    .slider-controls button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-slider {
+        height: 50vh;
+    }
+    
+    .slide h2 {
+        font-size: 1.5rem;
+    }
+    
+    .slider-controls {
+        display: none;
+    }
+}
+/* Add these to your existing style.css */
+
+.slide-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.slide-rating, .slide-year {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.slide-rating i {
+    color: gold;
+    margin-right: 5px;
+    font-size: 0.8rem;
+}
+
+/* Accessibility improvements */
+.slider-controls button:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.slider-dot:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Preloader for slider */
+.slide {
+    position: relative;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(13, 37, 63, 0.1) 25%, 
+        rgba(13, 37, 63, 0.3) 50%, 
+        rgba(13, 37, 63, 0.1) 75%);
+    background-size: 400% 400%;
+    animation: shimmer 2s infinite linear;
+    opacity: 0.5;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.slide.active::after {
+    display: none;
+}
